@@ -1,0 +1,50 @@
+﻿@page "/weathernow"
+@inject HttpClient Http
+@using WeatherForecast.Models
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Været i Oslo Nå</h1>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>gfhfgh</p>
+    <p>@WeatherCodes.Weathercodes.First(x=>x.Key ==  forecasts.current_weather.weathercode).Value</p>
+
+    <p>Vindretning</p>
+    <p>@forecasts.current_weather.winddirection</p>
+
+    <p>Vindhastighet</p>
+    <p>@forecasts.current_weather.windspeed meter/s</p>
+
+    <p>Temperatur</p>
+    <p>@forecasts.current_weather.temperature C°</p>
+
+    <p>Tid</p>
+    <p>@forecasts.current_weather.time</p>
+
+    <p>@forecasts.timezone</p>
+
+
+}
+
+@code {
+    private WeatherForecast? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&current_weather=true");
+
+    }
+
+
+
+
+
+
+}
