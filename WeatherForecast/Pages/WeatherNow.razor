@@ -12,8 +12,9 @@
 }
 else
 {
-    <p>gfhfgh</p>
-    <p>@WeatherCodes.Weathercodes.First(x=>x.Key ==  forecasts.current_weather.weathercode).Value</p>
+
+    <p>Beskrivelse av været</p>
+    <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
 
     <p>Vindretning</p>
     <p>@forecasts.current_weather.winddirection</p>
@@ -38,7 +39,7 @@ else
     protected override async Task OnInitializedAsync()
     {
 
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&current_weather=true");
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin");
 
     }
 

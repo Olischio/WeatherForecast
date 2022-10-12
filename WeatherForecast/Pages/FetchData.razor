@@ -6,7 +6,7 @@
 
 <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Værmelding for Oslo neste 7 dager</p>
 
 @if (forecasts == null)
 {
@@ -14,16 +14,15 @@
 }
 else
 {
-    <p>@forecasts.timezone</p>
+    <p>Tidssone @forecasts.timezone</p>
     <table class="table">
         <thead>
             <tr>
                 <th>Date</th>
                 <th>Rain</th>
-
                 <th>windspeed_10m</th>
-
-                
+                <th>Temperatur</th>
+                <th>weathercode</th>
             </tr>
         </thead>
         <tbody>
@@ -37,20 +36,15 @@ else
 
                     <td>@forecasts.hourly.windspeed_10m[i]</td>
 
-
-                    
+                    <td>@forecasts.hourly.temperature_2m[i] C°</td>
+                 
+                    <td>
+                        @WeatherCodes.GetWeatherDescription(forecasts.hourly.weathercode[i])
+                    </td>
 
                 </tr>
             }
 
-            @*@foreach (var tidspunkt in forecasts.hourly.time)
-            {
-                <tr>
-                    <td>@tidspunkt</td>
-                    <td>fdgdfg</td>
-
-                </tr>
-            }*@
         </tbody>
     </table>
 }
@@ -60,16 +54,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-
-
-
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m&current_weather=true");
-
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m,weathercode&current_weather=true&timezone=Europe%2FBerlin");
     }
-
-
-
-
-
-
 }
