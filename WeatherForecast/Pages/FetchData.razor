@@ -20,9 +20,9 @@ else
             <tr>
                 <th>Date</th>
                 <th>Rain</th>
-                <th>windspeed_10m</th>
-                <th>Temperatur</th>
-                <th>weathercode</th>
+                <th>Windspeed</th>
+                <th>Temperature</th>
+                <th>Weather</th>
             </tr>
         </thead>
         <tbody>
@@ -32,9 +32,9 @@ else
                 <tr>
                     <td>@forecasts.hourly.time[i]</td>
 
-                    <td>@forecasts.hourly.rain[i]</td>
+                    <td>@forecasts.hourly.rain[i] mm</td>
 
-                    <td>@forecasts.hourly.windspeed_10m[i]</td>
+                    <td>@forecasts.hourly.windspeed_10m[i] m/s</td>
 
                     <td>@forecasts.hourly.temperature_2m[i] C°</td>
                  

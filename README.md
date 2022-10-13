@@ -11,7 +11,9 @@ https://hjelp.yr.no/hc/no/articles/203786121-V%C3%A6rsymbolene-p%C3%A5-Yr-
 
 https://www.youtube.com/watch?v=GVrjv9ajsJ0
 
-https://stackoverflow.com/questions/29046545/how-to-display-highest-and-lowest-of-an-array
+
+FOR GRAF AV TEMP (og tabell?)
+https://api.open-meteo.com/v1/forecast?latitude=59.9138&longitude=10.7387&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin
 
 
 ## Oppgaveteksten
