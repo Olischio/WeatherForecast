@@ -11,6 +11,8 @@ https://hjelp.yr.no/hc/no/articles/203786121-V%C3%A6rsymbolene-p%C3%A5-Yr-
 
 https://www.youtube.com/watch?v=GVrjv9ajsJ0
 
+https://stackoverflow.com/questions/29046545/how-to-display-highest-and-lowest-of-an-array
+
 
 ## Oppgaveteksten
 Du skal i denne oppgaven lage en nettside som viser værmeldingen for Oslo de neste 7 dagene. 
