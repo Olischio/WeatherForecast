@@ -1,0 +1,12 @@
+﻿@if (WindDirection.HasValue)
+{
+    var vindretning = WindDirection + 180 + "deg";
+    <span style="transform: rotate(@vindretning);" class="oi oi-arrow-top" aria-hidden="true"></span>
+}
+
+@code {
+
+    [EditorRequired]
+    [Parameter]
+    public float? WindDirection { get; set; }
+}

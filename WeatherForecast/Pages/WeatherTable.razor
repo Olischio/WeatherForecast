@@ -35,15 +35,7 @@ else
 
                     <td>@forecasts.hourly.windspeed_10m[i] m/s</td>
                     
-                    <td>
-                        @if (forecasts.hourly.winddirection_10m[i].HasValue)
-                        {
-                            var vindretning = forecasts.hourly.winddirection_10m[i] + 180 + "deg";
-                            <span style="transform: rotate(@vindretning);" class="oi oi-arrow-top" aria-hidden="true"></span>
-                        }
-
-
-                    </td>
+                    <td><WindArrow WindDirection="@forecasts.hourly.winddirection_10m[i]" /></td>
 
 
                     <td>@forecasts.hourly.temperature_2m[i] C°</td>
@@ -60,10 +52,10 @@ else
 }
 
 @code {
-    private WeatherForecast? forecasts;
+    private WeatherForecastHourly? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m,winddirection_10m,weathercode&current_weather=true&timezone=Europe%2FBerlin");
+        forecasts = await Http.GetFromJsonAsync<WeatherForecastHourly>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m,winddirection_10m,weathercode&current_weather=true&timezone=Europe%2FBerlin");
     }
 }
