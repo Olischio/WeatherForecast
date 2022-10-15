@@ -2,6 +2,22 @@
 
 namespace WeatherForecast.Models
 {
+
+    public class WeatherCodeInfo
+    {
+        public WeatherCodeInfo(int weatherCode, string description, string image="")
+        {
+            WeatherCode = weatherCode;
+            Description = description;
+            Image = image;  
+        }
+
+        public int WeatherCode { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+
+    }
+
     public static class WeatherCodes
     {
 
@@ -9,9 +25,12 @@ namespace WeatherForecast.Models
         {
             foreach (var item in Weathercodes)
             {
-                if (item.Key == weathercode)
+                if (item.WeatherCode == weathercode)
                 {
-                    return item.Value;
+                   
+
+                    return weathercode +" "+ item.Description;
+
                 }
             }
 
@@ -19,44 +38,58 @@ namespace WeatherForecast.Models
 
         }
 
+        public static string GetWeatherImage(int weathercode)
+        {
+            foreach (var item in Weathercodes)
+            {
+                if (item.WeatherCode == weathercode)
+                {
+                    return item.Image;
+                }
+            }
 
-        private static List<KeyValuePair<int, string>> Weathercodes = new List<KeyValuePair<int, string>>
+            return string.Empty;
+        }
+
+
+
+        private static List<WeatherCodeInfo> Weathercodes = new List<WeatherCodeInfo>
         {
 
-            new KeyValuePair<int, string>(0, "Clear sky"),
-            new KeyValuePair<int, string>(1, "Mainly clear"),
-            new KeyValuePair<int, string>(2, "Partly cloudy"),
-            new KeyValuePair<int, string>(3, "Overcast"),
+            new WeatherCodeInfo(0, "Clear sky"),
+            new WeatherCodeInfo(1, "Mainly clear"),
+            new WeatherCodeInfo(2, "Partly cloudy"),
+            new WeatherCodeInfo(3, "Overcast"),
 
-            new KeyValuePair<int, string>(45, "Fog"),
-            new KeyValuePair<int, string>(48, "Depositing rime fog"),
+            new WeatherCodeInfo(45, "Fog"),
+            new WeatherCodeInfo(48, "Depositing rime fog"),
+              
+            new WeatherCodeInfo(51, "Drizzle: Light intensity"),
+            new WeatherCodeInfo(53, "Drizzle: moderate intensity"),
+            new WeatherCodeInfo(55, "Drizzle: dense intensity"),
+               
+            new WeatherCodeInfo(56, "Freezing Drizzle: Light intensity"),
+            new WeatherCodeInfo(57, "Freezing Drizzle: Dense intensity"),
 
-            new KeyValuePair<int, string>(51, "Drizzle: Light intensity"),
-            new KeyValuePair<int, string>(53, "Drizzle: moderate intensity"),
-            new KeyValuePair<int, string>(55, "Drizzle: dense intensity"),
-
-            new KeyValuePair<int, string>(56, "Freezing Drizzle: Light intensity"),
-            new KeyValuePair<int, string>(57, "Freezing Drizzle: Dense intensity"),
-
-            new KeyValuePair<int, string>(61, "Rain: Slight intensity"),
-            new KeyValuePair<int, string>(63, "Rain: Moderate intensity"),
-            new KeyValuePair<int, string>(65, "Rain: Heavy intensity"),
-
-            new KeyValuePair<int, string>(66, "Freezing Rain: Light intensity"),
-            new KeyValuePair<int, string>(67, "Freezing Rain: Heavy intensity"),
-            new KeyValuePair<int, string>(71, "Snow fall: Slight intensity"),
-            new KeyValuePair<int, string>(73, "Snow fall: Moderate intensity"),
-            new KeyValuePair<int, string>(75, "Snow fall: Heavy intensity"),
-            new KeyValuePair<int, string>(77, "Snow grains"),
-
-            new KeyValuePair<int, string>(80, "Rain showers: Slight"),
-            new KeyValuePair<int, string>(81, "Rain showers: Moderate"),
-            new KeyValuePair<int, string>(82, "Rain showers: Violent"),
-            new KeyValuePair<int, string>(85, "Snow showers Slight"),
-            new KeyValuePair<int, string>(86, "Snow showers Heavy,"),
-            new KeyValuePair<int, string>(95, "Thunderstorm: Slight or moderate"),
-            new KeyValuePair<int, string>(96, "Thunderstorm with slight and heavy hail"),
-            new KeyValuePair<int, string>(99, "Thunderstorm with slight and heavy hail"),
+            new WeatherCodeInfo(61, "Rain: Slight intensity"),
+            new WeatherCodeInfo(63, "Rain: Moderate intensity"),
+            new WeatherCodeInfo(65, "Rain: Heavy intensity"),
+               
+            new WeatherCodeInfo(66, "Freezing Rain: Light intensity"),
+            new WeatherCodeInfo(67, "Freezing Rain: Heavy intensity"),
+            new WeatherCodeInfo(71, "Snow fall: Slight intensity"),
+            new WeatherCodeInfo(73, "Snow fall: Moderate intensity"),
+            new WeatherCodeInfo(75, "Snow fall: Heavy intensity"),
+            new WeatherCodeInfo(77, "Snow grains"),
+                
+            new WeatherCodeInfo(80, "Rain showers: Slight", "05d.svg"),
+            new WeatherCodeInfo(81, "Rain showers: Moderate"),
+            new WeatherCodeInfo(82, "Rain showers: Violent"),
+            new WeatherCodeInfo(85, "Snow showers Slight"),
+            new WeatherCodeInfo(86, "Snow showers Heavy,"),
+            new WeatherCodeInfo(95, "Thunderstorm: Slight or moderate"),
+            new WeatherCodeInfo(96, "Thunderstorm with slight and heavy hail"),
+            new WeatherCodeInfo(99, "Thunderstorm with slight and heavy hail"),
         };
     }
 }

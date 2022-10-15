@@ -23,6 +23,8 @@ else
                 <th>Wind Direction</th>
                 <th>Temperature</th>
                 <th>Weather Description</th>
+                <th>Image</th>
+
             </tr>
         </thead>
         <tbody>
@@ -47,6 +49,18 @@ else
                     <td>
                         @WeatherCodes.GetWeatherDescription(forecasts.hourly.weathercode[i])
                     </td>
+
+                    <td>
+                        @{
+                            var bilde = WeatherCodes.GetWeatherImage(forecasts.hourly.weathercode[i]);
+
+                            if (bilde != "")
+                            {
+                                <img src="/Images/svg/@bilde" />
+                            }
+                        }
+                    </td>
+
 
                 </tr>
             }
