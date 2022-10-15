@@ -17,6 +17,7 @@ else
         <thead>
             <tr>
                 <th>Date</th>
+                <th>Hour</th>
                 <th>Rain</th>
                 <th>Windspeed</th>
                 <th>Wind Direction</th>
@@ -29,7 +30,10 @@ else
             @for (var i = 0; i < forecasts.hourly.time.Count(); i++)
             {
                 <tr>
-                    <td>@forecasts.hourly.time[i]</td>
+
+                    <td><ShowDateOrHour DateAsString="@forecasts.hourly.time[i]" /></td>
+
+                    <td><ShowDateOrHour DateAsString="@forecasts.hourly.time[i]" ShowHourOnly=true /></td>
 
                     <td>@forecasts.hourly.rain[i] mm</td>
 

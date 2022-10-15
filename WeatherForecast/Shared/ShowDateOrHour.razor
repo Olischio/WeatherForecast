@@ -1,0 +1,40 @@
+﻿@FormatedDate
+
+@code {
+
+    [EditorRequired]
+    [Parameter]
+    public string? DateAsString { get; set; }
+
+    [Parameter]
+    public bool ShowHourOnly { get; set; } = false;
+
+    private string FormatedDate = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (DateTime.TryParse(this.DateAsString, out var mydate))
+        {
+            FormatedDate = $"{mydate.ToString("dd.MM.yyyy")}";
+
+            if (ShowHourOnly)
+            {
+                FormatedDate = mydate.Hour.ToString();
+            }
+
+        }
+        else
+        {
+            // Klarte ikke tolke datoen bruker den innsendte datoen
+            FormatedDate = this.DateAsString ?? string.Empty;
+
+            if (ShowHourOnly)
+            {
+                FormatedDate = string.Empty;
+            }
+        }
+    }
+}
+
