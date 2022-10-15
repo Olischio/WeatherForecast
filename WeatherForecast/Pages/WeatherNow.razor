@@ -16,6 +16,15 @@ else
     <p>Weather Description</p>
     <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
 
+    
+    var bilde = WeatherCodes.GetWeatherImage(forecasts.current_weather.weathercode);
+
+    if (bilde != "")
+    {
+        <img src="/Images/svg/@bilde" />
+    }
+     
+
     <p>Wind Direction</p>
     <p>@forecasts.current_weather.winddirection</p>
     <WindArrow WindDirection="@forecasts.current_weather.winddirection" />

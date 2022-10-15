@@ -42,12 +42,11 @@ namespace WeatherForecast.Models
         {
             foreach (var item in Weathercodes)
             {
-                if (item.WeatherCode == weathercode)
+                if (item.WeatherCode == weathercode && !string.IsNullOrEmpty(item.Image))
                 {
-                    return item.Image;
+                    return item.Image + ".svg";
                 }
             }
-
             return string.Empty;
         }
 
@@ -56,10 +55,10 @@ namespace WeatherForecast.Models
         private static List<WeatherCodeInfo> Weathercodes = new List<WeatherCodeInfo>
         {
 
-            new WeatherCodeInfo(0, "Clear sky"),
-            new WeatherCodeInfo(1, "Mainly clear"),
-            new WeatherCodeInfo(2, "Partly cloudy"),
-            new WeatherCodeInfo(3, "Overcast"),
+            new WeatherCodeInfo(0, "Clear sky", "01d"),
+            new WeatherCodeInfo(1, "Mainly clear", "02d"),
+            new WeatherCodeInfo(2, "Partly cloudy", "03d"),
+            new WeatherCodeInfo(3, "Overcast", "04"),
 
             new WeatherCodeInfo(45, "Fog"),
             new WeatherCodeInfo(48, "Depositing rime fog"),
@@ -82,7 +81,7 @@ namespace WeatherForecast.Models
             new WeatherCodeInfo(75, "Snow fall: Heavy intensity"),
             new WeatherCodeInfo(77, "Snow grains"),
                 
-            new WeatherCodeInfo(80, "Rain showers: Slight", "05d.svg"),
+            new WeatherCodeInfo(80, "Rain showers: Slight", "05d"),
             new WeatherCodeInfo(81, "Rain showers: Moderate"),
             new WeatherCodeInfo(82, "Rain showers: Violent"),
             new WeatherCodeInfo(85, "Snow showers Slight"),
