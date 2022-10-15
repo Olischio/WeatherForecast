@@ -42,6 +42,7 @@
         public int[] relativehumidity_2m { get; set; }
         public float[] rain { get; set; }
         public float[] windspeed_10m { get; set; }
+        public float?[] winddirection_10m { get; set; }
         public int[] weathercode { get; set; }
     }
 
