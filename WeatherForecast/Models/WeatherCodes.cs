@@ -15,7 +15,7 @@ namespace WeatherForecast.Models
                 }
             }
 
-            return $"Sorry, vi fant ikke beskrivelsen tilknyttet værkoden {weathercode}";
+            return $"Sorry, we did not find the description for: {weathercode}";
 
         }
 

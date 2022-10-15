@@ -1,0 +1,26 @@
+﻿@page "/plotly"
+@inject IJSRuntime JsRuntime;
+@using WeatherForecast.Models
+@inject HttpClient Http
+
+<PageTitle>Temperature 7 days</PageTitle>
+
+<h1>Temperature next 7 days</h1>
+
+
+<div id="plot"></div>
+
+
+@code {
+    
+    private WeatherForecastDaily? forecasts;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecastDaily>("?latitude=59.9138&longitude=10.7387&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin");
+        await JsRuntime.InvokeVoidAsync("makePlotly", forecasts.daily.time, forecasts.daily.temperature_2m_min, forecasts.daily.temperature_2m_max);
+
+    }
+
+}

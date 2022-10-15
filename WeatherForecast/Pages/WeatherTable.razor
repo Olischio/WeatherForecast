@@ -1,12 +1,10 @@
-﻿@page "/fetchdata"
+﻿@page "/Weathertable"
 @inject HttpClient Http
 @using WeatherForecast.Models
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>Weather forecast 7 days</PageTitle>
 
-<h1>Weather forecast</h1>
-
-<p>Værmelding for Oslo neste 7 dager</p>
+<h1>Weather forecast Oslo 7 days</h1>
 
 @if (forecasts == null)
 {
@@ -14,7 +12,7 @@
 }
 else
 {
-    <p>Tidssone @forecasts.timezone</p>
+    <p>Time zone @forecasts.timezone</p>
     <table class="table">
         <thead>
             <tr>
@@ -23,7 +21,7 @@ else
                 <th>Windspeed</th>
                 <th>Wind Direction</th>
                 <th>Temperature</th>
-                <th>Weather</th>
+                <th>Weather Description</th>
             </tr>
         </thead>
         <tbody>

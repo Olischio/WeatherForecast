@@ -4,7 +4,7 @@
 
 <PageTitle>Weather forecast</PageTitle>
 
-<h1>Været i Oslo Nå</h1>
+<h1>Weather in Oslo now</h1>
 
 @if (forecasts == null)
 {
@@ -13,19 +13,19 @@
 else
 {
 
-    <p>Beskrivelse av været</p>
+    <p>Weather Description</p>
     <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
 
-    <p>Vindretning</p>
+    <p>Wind Direction</p>
     <p>@forecasts.current_weather.winddirection</p>
 
-    <p>Vindhastighet</p>
+    <p>Wind speed</p>
     <p>@forecasts.current_weather.windspeed meter/s</p>
 
-    <p>Temperatur</p>
+    <p>Temperature</p>
     <p>@forecasts.current_weather.temperature C°</p>
 
-    <p>Tid</p>
+    <p>Time</p>
     <p>@forecasts.current_weather.time</p>
 
     <p>@forecasts.timezone</p>
@@ -38,14 +38,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-
         forecasts = await Http.GetFromJsonAsync<WeatherForecast>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin");
-
     }
-
-
-
-
-
-
 }
