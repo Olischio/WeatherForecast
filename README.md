@@ -1,20 +1,3 @@
-# WeatherForecast
-
-Henter værmelding fra  open-meteo.com
-https://open-meteo.com/en/docs
-
-## Yr
-
-https://hjelp.yr.no/hc/no/articles/203786121-V%C3%A6rsymbolene-p%C3%A5-Yr-
-
-## Youtube
-
-https://www.youtube.com/watch?v=GVrjv9ajsJ0
-
-
-FOR GRAF AV TEMP (og tabell?)
-https://api.open-meteo.com/v1/forecast?latitude=59.9138&longitude=10.7387&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin
-
 
 ## Oppgaveteksten
 Du skal i denne oppgaven lage en nettside som viser værmeldingen for Oslo de neste 7 dagene. 
