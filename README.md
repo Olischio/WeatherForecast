@@ -1,3 +1,8 @@
+# Weather Forecast
+
+For å kjøre koden lokalt , må man opne i Visual Studio og restore NuGet packages
+https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
+
 
 ## Oppgaveteksten
 Du skal i denne oppgaven lage en nettside som viser værmeldingen for Oslo de neste 7 dagene. 
