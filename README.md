@@ -1,6 +1,6 @@
 # Weather Forecast
 
-For å kjøre koden lokalt , må man opne i Visual Studio og restore NuGet packages
+For å kjøre koden lokalt , må man åpne i Visual Studio og restore NuGet packages
 https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
 
 
