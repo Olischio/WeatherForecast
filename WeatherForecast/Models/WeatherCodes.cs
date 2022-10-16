@@ -51,6 +51,7 @@ namespace WeatherForecast.Models
 
         private static List<WeatherCodeInfo> Weathercodes = new List<WeatherCodeInfo>
         {
+            // Kodene og beskrivelsene er fra https://open-meteo.com/en/docs WMO Weather interpretation codes (WW)
 
             new WeatherCodeInfo(0, "Clear sky", "01d"),
             new WeatherCodeInfo(1, "Mainly clear", "02d"),

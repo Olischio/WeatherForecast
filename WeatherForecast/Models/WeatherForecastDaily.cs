@@ -1,7 +1,7 @@
 ﻿namespace WeatherForecast.Models
 {
 
-
+    // Disse klassene er laget ved å bruke Visual Studio funksjonen paste as json, men en json respons jeg fikk fra postman.
 
 
     public class WeatherForecastDaily

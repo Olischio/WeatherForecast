@@ -76,6 +76,8 @@ else
 @code {
     private WeatherForecastHourly? forecasts;
 
+    // Method invoked when the component is ready to start, having received its initial parameters from its parent in the render tree.
+    // Override this method if you will perform an asynchronous operation and want the component to refresh when that operation is completed.
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetFromJsonAsync<WeatherForecastHourly>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m,winddirection_10m,weathercode&current_weather=true&timezone=Europe%2FBerlin");
