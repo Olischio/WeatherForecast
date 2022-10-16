@@ -13,8 +13,7 @@
 else
 {
 
-    <p>Weather Description</p>
-    <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
+    
 
     
     var bilde = WeatherCodes.GetWeatherImage(forecasts.current_weather.weathercode);
@@ -23,27 +22,26 @@ else
     {
         <img src="/Images/svg/@bilde" />
     }
-     
-
+    <hr />
+    <p>Weather Description</p>
+    <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
+    <hr />
     <p>Wind Direction</p>
-    <p>@forecasts.current_weather.winddirection</p>
+    @*<p>@forecasts.current_weather.winddirection</p>*@
     <WindArrow WindDirection="@forecasts.current_weather.winddirection" />
-
+    <hr />
     <p>Wind speed</p>
     <p>@forecasts.current_weather.windspeed meter/s</p>
-
+        <hr />
     <p>Temperature</p>
     <p>@forecasts.current_weather.temperature C°</p>
-
-    <p>Time</p>
-    <p>@forecasts.current_weather.time</p>
-
-    <p>
-        <ShowDateOrHour DateAsString="@forecasts.current_weather.time"/>
-    </p>
-
+    <hr />
+    <p>Time zone</p>
     <p>@forecasts.timezone</p>
-
+    <hr />
+    <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
+    <br />
+    <a href="https://github.com/open-meteo/open-meteo/blob/main/LICENSE">License</a>
 
 }
 

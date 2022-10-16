@@ -27,10 +27,7 @@ namespace WeatherForecast.Models
             {
                 if (item.WeatherCode == weathercode)
                 {
-                   
-
-                    return weathercode +" "+ item.Description;
-
+                    return item.Description;
                 }
             }
 
