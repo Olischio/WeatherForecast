@@ -21,7 +21,9 @@ else
     <hr />
     <p>Weather Description</p>
     <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
-
+    <hr />
+    <p>Rain</p>
+    <p>@forecasts.daily.rain_sum[0] mm (expected this day)</p>
 
     <hr />
     <p>Wind Direction</p>
@@ -41,11 +43,11 @@ else
     <a href="https://github.com/open-meteo/open-meteo/blob/main/LICENSE">License</a>
 }
 
-    @code {
-private WeatherForecastHourly? forecasts;
+@code {
+    private WeatherForecastDaily? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecastHourly>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin");
+        forecasts = await Http.GetFromJsonAsync<WeatherForecastDaily>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin&daily=rain_sum");
     }
     }
