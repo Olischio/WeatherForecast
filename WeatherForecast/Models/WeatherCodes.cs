@@ -13,7 +13,9 @@ namespace WeatherForecast.Models
         }
 
         public int WeatherCode { get; set; }
+
         public string Description { get; set; }
+
         public string Image { get; set; }
 
     }
