@@ -12,12 +12,8 @@
 }
 else
 {
-
-    
-
-    
+    <!--Sender inn weathercoden som er i CURRENT weather ikke i HOURLY og returnerer bildet eller beskrivelsen som samsvarer med koden-->
     var bilde = WeatherCodes.GetWeatherImage(forecasts.current_weather.weathercode);
-
     if (bilde != "")
     {
         <img src="/Images/svg/@bilde" />
@@ -25,14 +21,15 @@ else
     <hr />
     <p>Weather Description</p>
     <p>@WeatherCodes.GetWeatherDescription(forecasts.current_weather.weathercode)</p>
+
+
     <hr />
     <p>Wind Direction</p>
-    @*<p>@forecasts.current_weather.winddirection</p>*@
     <WindArrow WindDirection="@forecasts.current_weather.winddirection" />
     <hr />
     <p>Wind speed</p>
     <p>@forecasts.current_weather.windspeed meter/s</p>
-        <hr />
+    <hr />
     <p>Temperature</p>
     <p>@forecasts.current_weather.temperature C°</p>
     <hr />
@@ -42,14 +39,13 @@ else
     <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
     <br />
     <a href="https://github.com/open-meteo/open-meteo/blob/main/LICENSE">License</a>
-
 }
 
-@code {
-    private WeatherForecastHourly? forecasts;
+    @code {
+private WeatherForecastHourly? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetFromJsonAsync<WeatherForecastHourly>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin");
     }
-}
+    }

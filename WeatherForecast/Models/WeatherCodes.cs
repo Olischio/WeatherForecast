@@ -20,7 +20,7 @@ namespace WeatherForecast.Models
 
     public static class WeatherCodes
     {
-
+        //Sjekker om innsendt weathercode samsvarer med en weathercode som ligger i weathercodeinfo, og sender den samsvarende beskrivelsen til weathercoden
         public static string GetWeatherDescription(int weathercode)
         {
             foreach (var item in Weathercodes)
@@ -35,6 +35,7 @@ namespace WeatherForecast.Models
 
         }
 
+        //Sjekker om innsendt weathercode samsvarer med en weathercode som ligger i weathercodeinfo, og sender det samsvarende bildet til weathercoden
         public static string GetWeatherImage(int weathercode)
         {
             foreach (var item in Weathercodes)

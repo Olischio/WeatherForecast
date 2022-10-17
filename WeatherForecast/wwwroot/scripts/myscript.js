@@ -1,4 +1,6 @@
 ﻿
+// Henter inn verdier fra C# (forecasts.daily.time, forecasts.daily.temperature_2m_min, forecasts.daily.temperature_2m_max)
+// 
 function makePlotly(x, y1, y2) {
     let traces = [
         {
@@ -20,6 +22,7 @@ function makePlotly(x, y1, y2) {
             }
         }
     ];
+
 
     let layout = {
         title: "Min & Max Temperature Oslo next 7 days",

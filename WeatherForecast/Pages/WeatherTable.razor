@@ -34,23 +34,29 @@ else
                 <tr>
 
                     <td><ShowDateOrHour DateAsString="@forecasts.hourly.time[i]" /></td>
-
+                   <!--ShowDateOrHour funksjonen viser med hjelp av forecasts.hourly.time en tid basert på om den er true eller ikke
+                       Hvis den er true viser den ikke Dato hvis den ikke er true viser den ikke klokkeslettet-->
                     <td><ShowDateOrHour DateAsString="@forecasts.hourly.time[i]" ShowHourOnly=true /></td>
 
+                    <!--Viser timebaserte verdier fra APIet-->
                     <td>@forecasts.hourly.rain[i] mm</td>
 
                     <td>@forecasts.hourly.windspeed_10m[i] m/s</td>
-                    
+
+                    <!--Sender inn vindretning vedien til WindArrow som roterer en SVG av vindpilen fra Yr på nettsiden-->
                     <td><WindArrow WindDirection="@forecasts.hourly.winddirection_10m[i]" /></td>
 
 
                     <td>@forecasts.hourly.temperature_2m[i] C°</td>
-                 
+
+
+                    <!--Sender inn weathercode verdien som blir sjekket i "WeatherCodes.cs" og blir returnert beskrivelsen eller bildetsom samsvarer weathercoden-->
                     <td>
                         @WeatherCodes.GetWeatherDescription(forecasts.hourly.weathercode[i])
                     </td>
 
                     <td>
+
                         @{
                             var bilde = WeatherCodes.GetWeatherImage(forecasts.hourly.weathercode[i]);
 

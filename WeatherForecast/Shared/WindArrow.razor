@@ -1,4 +1,6 @@
-﻿@if (WindDirection.HasValue)
+﻿
+<!--Roterer Vindpilen basert på vindretningen-->
+@if (WindDirection.HasValue)
 {
     var vindretning = WindDirection + 180 + "deg";
     <span style="transform: rotate(@vindretning);" class="oi oi-arrow-top" aria-hidden="true"></span>
