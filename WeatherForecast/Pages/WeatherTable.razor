@@ -86,6 +86,7 @@ else
     // Override this method if you will perform an asynchronous operation and want the component to refresh when that operation is completed.
     protected override async Task OnInitializedAsync()
     {
+        // Henter data fra APIet
         forecasts = await Http.GetFromJsonAsync<WeatherForecastHourly>("?latitude=59.9138&longitude=10.7387&hourly=temperature_2m,relativehumidity_2m,rain,windspeed_10m,winddirection_10m,weathercode&current_weather=true&timezone=Europe%2FBerlin");
     }
 }

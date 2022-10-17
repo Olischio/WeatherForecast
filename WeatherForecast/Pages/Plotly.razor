@@ -24,6 +24,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        // Henter data fra APIet
         forecasts = await Http.GetFromJsonAsync<WeatherForecastDaily>("?latitude=59.9138&longitude=10.7387&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin");
         await JsRuntime.InvokeVoidAsync("makePlotly", forecasts.daily.time, forecasts.daily.temperature_2m_min, forecasts.daily.temperature_2m_max);
 

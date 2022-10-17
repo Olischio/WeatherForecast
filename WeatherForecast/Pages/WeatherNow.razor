@@ -48,6 +48,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        // Henter data fra APIet
         forecasts = await Http.GetFromJsonAsync<WeatherForecastDaily>("?latitude=59.9138&longitude=10.7387&current_weather=true&timezone=Europe%2FBerlin&daily=rain_sum");
     }
     }
