@@ -1,35 +1,46 @@
 # Weather Forecast
 
-For å kjøre koden lokalt , må man åpne i Visual Studio og restore NuGet packages
+For ï¿½ kjï¿½re koden lokalt , mï¿½ man ï¿½pne i Visual Studio og restore NuGet packages
 https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
 
 
-## Oppgaveteksten
-Du skal i denne oppgaven lage en nettside som viser værmeldingen for Oslo de neste 7 dagene. 
-Nettsiden skal bestå av 3 html-sider. 
+## Bilder av prosjektet
 
-En som viser været akkurat nå på en god måte, 
-1 som viser en tabell over vært de neste 7 dagene 
+
+![WeatherPlot](./Readmeimages/WeatherforecastPlot.png)
+
+![WeatherTable](./Readmeimages/WeatherforecastTable.png)
+
+![WeatherNow](./Readmeimages/WeatherforecastWeatherNow.png)
+
+
+
+## Oppgaveteksten
+Du skal i denne oppgaven lage en nettside som viser vï¿½rmeldingen for Oslo de neste 7 dagene. 
+Nettsiden skal bestï¿½ av 3 html-sider. 
+
+En som viser vï¿½ret akkurat nï¿½ pï¿½ en god mï¿½te, 
+1 som viser en tabell over vï¿½rt de neste 7 dagene 
 og en som viser et plot over forventet temperatur de neste 7 dagene. 
-Nettsiden skal inneholde en menylinje for å navigere mellom de ulike sidene. 
+Nettsiden skal inneholde en menylinje for ï¿½ navigere mellom de ulike sidene. 
  
-For å få værmeldingen skal dere bruke nettsiden open-meteo.com. Dere trenger ikke å lage en bruker. 
+For ï¿½ fï¿½ vï¿½rmeldingen skal dere bruke nettsiden open-meteo.com. Dere trenger ikke ï¿½ lage en bruker. 
  
 Du skal lage en 5 min lang video hvor dere viser nettsiden, og forklarer koden.
  
 Skal innleveres:
-1. Kode i .zip-fil på it´s learning
-2. Video på 5 min
+1. Kode i .zip-fil pï¿½ itï¿½s learning
+2. Video pï¿½ 5 min
 	 
 Suksesskriterier:
-· Har laget en god menylinje
-· Har laget 3 fine nettsider. Tenk på layout av sidene. 
-· Har skrevet oversiktlig HTML
-· Har skrevet oversiktlig CSS
-· Har skrevet oversiktlig Javascript
-· Har laget riktig API-kall
-· Har laget ett godt plot av temperatur med plotly
-· Har oversiktlig mappestruktur og navn på filer
-· Levert i riktig format til riktig tid
-· Laget en god video som forklarer koden på en oversiktlig måte
-· Har med noe unikt og kreativt på nettsiden sin
+ï¿½ Har laget en god menylinje
+ï¿½ Har laget 3 fine nettsider. Tenk pï¿½ layout av sidene. 
+ï¿½ Har skrevet oversiktlig HTML
+ï¿½ Har skrevet oversiktlig CSS
+ï¿½ Har skrevet oversiktlig Javascript
+ï¿½ Har laget riktig API-kall
+ï¿½ Har laget ett godt plot av temperatur med plotly
+ï¿½ Har oversiktlig mappestruktur og navn pï¿½ filer
+ï¿½ Levert i riktig format til riktig tid
+ï¿½ Laget en god video som forklarer koden pï¿½ en oversiktlig mï¿½te
+ï¿½ Har med noe unikt og kreativt pï¿½ nettsiden sin
