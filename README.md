@@ -7,11 +7,11 @@ https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
 ## Bilder av prosjektet
 
 
-![WeatherPlot](./Readmeimages/WeatherforecastPlot.png)
+![WeatherPlot](./Readmeimages/WeatherforecastPlot.png "")
 
-![WeatherTable](./Readmeimages/WeatherforecastTable.png)
+![WeatherTable](./Readmeimages/WeatherforecastTable.png "")
 
-![WeatherNow](./Readmeimages/WeatherforecastWeatherNow.png)
+![WeatherNow](./Readmeimages/WeatherforecastWeatherNow.png "")
 
 
 
